@@ -2,8 +2,8 @@
 #include <HTTPClient.h>
 #include <Arduino_JSON.h>
 
-const char* ssid = "SSID";
-const char* password = "PASSWORD";
+const char* ssid = "home_nantang";
+const char* password = "0622780667";
 const char* serverName = "http://49.0.124.54:1234/water_monitors";
 unsigned long lastTime = 0;
 unsigned long timerDelay = 5000;
