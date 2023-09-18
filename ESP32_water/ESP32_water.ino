@@ -21,7 +21,7 @@ const char* serverName = "http://49.0.124.54:1234/water_monitors";
 unsigned long lastTime = 0;
 unsigned long timerDelay = 5000;
 
-float current_pzem-004T;
+float current_pzem;
 float temp;
 int water_level =0;
 void setup() {
@@ -41,14 +41,12 @@ void setup() {
 
 void loop() {
 
-  current_pzem-004T = pzem.current();
-  if (isnan(current)) {
-    Serial.println("Error reading current");
-  }
+  current_pzem = pzem.current();
+
   temp = dht.readTemperature();
   water_level = analogRead(water_level_pin);
   Serial.print("current_pzem-004T =");
-  Serial.println(current_pzem-004T);
+  Serial.println(current_pzem);
   Serial.print("temp =");
   Serial.println(temp);
   Serial.print("water_level =");
@@ -65,7 +63,7 @@ void loop() {
 
       JSONVar waterMonitor;
       waterMonitor["mac_address"] = "00:11:22:33:44:55";
-      waterMonitor["electric_current"] = current_pzem-004T;
+      waterMonitor["electric_current"] = current_pzem;
       waterMonitor["water_temperature"] = temp;
       waterMonitor["water_flow"] = true;
 
