@@ -1,5 +1,5 @@
 #include <WiFi.h>
-#include <HTTPClient.h>
+#include <WiFiClient.h>
 #include <Arduino_JSON.h>
 
 const char* ssid = "home_nantang";
@@ -47,7 +47,7 @@ void loop() {
       Serial.print("HTTP Response code: ");
       Serial.println(httpResponseCode);
 
-      //http.end();
+      http.end();
     }
     else {
       Serial.println("WiFi Disconnected");
