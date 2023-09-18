@@ -4,14 +4,12 @@
 
 const char* ssid = "home_nantang";
 const char* password = "0622780667";
-
 const char* serverName = "http://49.0.124.54:1234/water_monitors";
 unsigned long lastTime = 0;
 unsigned long timerDelay = 5000;
 
 void setup() {
   Serial.begin(115200);
-
   WiFi.begin(ssid, password);
   Serial.println("Connecting");
   while (WiFi.status() != WL_CONNECTED) {
@@ -21,8 +19,6 @@ void setup() {
   Serial.println("");
   Serial.print("Connected to WiFi network with IP Address: ");
   Serial.println(WiFi.localIP());
-  
-  Serial.println("Timer set to 5 seconds (timerDelay variable), it will take 5 seconds before publishing the first reading.");
 }
 
 void loop() {
@@ -53,8 +49,6 @@ void loop() {
       Serial.print("HTTP Response code: ");
       Serial.println(httpResponseCode);
 
-
-      // Free resources
       http.end();
     }
     else {
