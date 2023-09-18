@@ -32,16 +32,6 @@ void loop() {
       // Your Domain name with URL path or IP address with path
       http.begin(client, serverName);
 
-      // If you need Node-RED/server authentication, insert user and password below
-      //http.setAuthorization("REPLACE_WITH_SERVER_USERNAME", "REPLACE_WITH_SERVER_PASSWORD");
-
-      // Specify content-type header
-      //http.addHeader("Content-Type", "application/x-www-form-urlencoded");
-      // Data to send with HTTP POST
-      //String httpRequestData = "mac_address=00:11:22:33:44:55&electric_current=3.14159265&water_temperature=25.12&water_flow=true";
-      // Send HTTP POST request
-      //int httpResponseCode = http.POST(httpRequestData);
-
       JSONVar waterMonitor;
       waterMonitor["mac_address"] = "00:11:22:33:44:55";
       waterMonitor["electric_current"] = 3.14159265;
@@ -52,7 +42,6 @@ void loop() {
 
       // If you need an HTTP request with a content type: application/json, use the following:
       http.addHeader("Content-Type", "application/json");
-      // int httpResponseCode = http.POST("{\"mac_address\":\"00:11:22:33:44:55\",\"electric_current\":\"3.14159265\",\"water_temperature\":\"24.25\",\"water_flow\":\"true\"}");
       int httpResponseCode = http.POST(jsonString);
       
       Serial.print("HTTP Response code: ");
