@@ -47,7 +47,7 @@ void loop() {
       Serial.print("HTTP Response code: ");
       Serial.println(httpResponseCode);
 
-      http.end();
+      //http.end();
     }
     else {
       Serial.println("WiFi Disconnected");
