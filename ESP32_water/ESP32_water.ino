@@ -50,15 +50,6 @@ void loop() {
       http.addHeader("Content-Type", "application/json");
       int httpResponseCode = http.POST("{\"mac_address\":\"00:11:22:33:44:55\",\"electric_current\":\"3.14159265\",\"water_temperature\":\"24.25\",\"water_flow\":\"true\"}");
       
-      // Add values in the document
-      //int t = 27.5;
-      //doc["mac_address"] = "00:11:22:33:44:55";
-      //doc["electric_current"] = 3.14159265;
-      //doc["water_temperature"] = 25.5;
-      //doc["water_flow"] = " true";
-      //String requestBody;
-      //serializeJson(doc, requestBody);
-      
       Serial.print("HTTP Response code: ");
       Serial.println(httpResponseCode);
 
